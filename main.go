@@ -22,9 +22,16 @@ func rectInfo(w, h int) (int, int, int) {
 	return w, h, area
 }
 
+//Named return values
+func rectInfo1(w, h int) (width int, height int, isSquare bool) {
+	isSquare = w == h
+	return w, h, isSquare
+}
 func main() {
 	Hello()
+
 	HelloWithParam("World")
+
 	result := greeting("Kai")
 	fmt.Println(result)
 
@@ -32,4 +39,14 @@ func main() {
 	fmt.Println("Width = ", w)
 	fmt.Println("Height = ", h)
 	fmt.Println("area = ", area)
+
+	w, h, isSquare := rectInfo1(100, 200)
+	if isSquare {
+		fmt.Println("'This is square'")
+	} else {
+
+		fmt.Println("width = ", w)
+		fmt.Println("height = ", h)
+	}
+
 }
