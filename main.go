@@ -17,8 +17,9 @@ func greeting(name string) string {
 }
 
 //Multiple return values
-func rectInfo(w int, h int) (int, int) {
-	return w, h
+func rectInfo(w, h int) (int, int, int) {
+	area := w * h
+	return w, h, area
 }
 
 func main() {
@@ -27,7 +28,8 @@ func main() {
 	result := greeting("Kai")
 	fmt.Println(result)
 
-	w, h := rectInfo(100, 200)
+	w, h, area := rectInfo(100, 200)
 	fmt.Println("Width = ", w)
 	fmt.Println("Height = ", h)
+	fmt.Println("area = ", area)
 }
